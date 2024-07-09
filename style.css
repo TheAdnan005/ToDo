@@ -78,11 +78,16 @@ body {
   cursor: pointer;
   margin-right: 10px;
 }
+.check-icon{
+  border-radius: 20px;
+}
 
 .check-icon.checked {
   color: green;
 }
-
+.task.checked {
+  background: grey;
+}
 #input-box,
 ::placeholder {
   padding-left: 6px;
@@ -93,16 +98,57 @@ body {
   color: white;
   border-radius: 10px;
   border: none;
+}input[type="checkbox"].check-icon {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #caaaaa;
+  border-radius: 50%;
+  background: beige;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out, border 0.5s ease-in-out;
+  position: relative;
 }
 
+input[type="checkbox"].check-icon:checked {
+  background: #551d03; /* This will match the task background color */
+  border-color: #551d03;
+}
+
+input[type="checkbox"].check-icon:checked::before {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
 .Add-btn {
   cursor: pointer;
   border: none;
   border-radius: 10px;
   background: #caaaaa;
   width: 40%;
+  /* transition: transform 1s ease-in-out; */
 }
-
+.Add-btn:hover{
+  transform: scale(1.15);
+  transition: 0.4s ease-in-out;
+  background: #c97575;
+}
+.delete-icon:hover{
+  padding: 1px 3px;
+  border-radius: 0px;
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}
+.task:has(input:checked){
+  background:gray;
+  transition: 0.5s ease-in-out;
+ }
 .poppins-bold-italic {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
