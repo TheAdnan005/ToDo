@@ -1,0 +1,26 @@
+Architecture Document
+
+Architecture Overview  : 
+
+The To-Do List Application is a simple client-side web application with no backend or database. The application relies on HTML, CSS, and JavaScript for structure, styling, and functionality, respectively.
+
+Components  : 
+HTML (index.html)  :
+
+Provides the basic structure of the application
+Contains the main container, title, task list, and input section
+
+CSS (style.css)  :
+
+Styles the main container, title, task list, and input section
+Ensures a consistent look and feel across the application
+
+JavaScript (script.js)  :
+
+Handles the addition and deletion of tasks
+Adds event listeners for the Add button and delete icons
+
+Component Interaction  :
+
+User Interaction: The user interacts with the application through the input box and buttons.
+DOM Manipulation: JavaScript dynamically updates the DOM based on user actions, such as adding or deleting tasks.
