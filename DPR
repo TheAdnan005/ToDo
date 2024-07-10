@@ -1,0 +1,44 @@
+Detailed Project Report (DPR)
+
+
+Introduction  : 
+
+The To-Do List Application is a minimalistic web application designed to help users manage their tasks efficiently. The application provides functionality for adding and deleting tasks with a clean and user-friendly interface.
+
+Objectives  : 
+
+To create a web-based to-do list application.
+To provide a simple interface for task management.
+To ensure ease of use with minimalistic design.
+
+Functional Requirements  :
+
+Add Task: The user can add a new task to the to-do list.
+Delete Task: The user can delete a task from the to-do list.
+
+Non-Functional Requirements  :
+
+Usability: The application should be easy to use with a clean interface.
+Performance: The application should load quickly and respond promptly to user actions.
+Compatibility: The application should work on modern web browsers.
+
+Design and Architecture  :
+
+Frontend: HTML is used for the structure, CSS for styling, and JavaScript for interactivity.
+No Backend: The application does not require a backend or database as it handles tasks within the client-side session.
+
+Implementation Details  :
+
+The application is implemented using HTML, CSS, and JavaScript.
+The CSS provides a modern and clean look using the Poppins font family.
+JavaScript is used to handle the addition and deletion of tasks dynamically.
+
+Testing  :
+
+Unit Testing: Each function (add, delete) was tested independently.
+Integration Testing: The application was tested as a whole to ensure all components work together seamlessly.
+User Acceptance Testing: The application was tested by users to ensure it meets their needs and expectations.
+
+Conclusion  :
+
+The To-Do List Application is a simple, effective tool for managing tasks. It is designed with usability in mind and provides all the basic functionalities required for a to-do list application.
