@@ -1,25 +1,23 @@
-1. High-Level Document (HLD)
-High-Level Design Document for To-Do List Application
+High-Level Document (HLD)
 
-1. Overview
 
-Project Name: To-Do List Application
-Description: A web-based application that allows users to create, edit, and manage their daily tasks.
-2. System Architecture
+Project Title: To-Do List Application
+Overview : 
+The To-Do List Application is a simple, web-based application that allows users to add and delete tasks. The application provides an intuitive user interface for managing daily tasks.
 
-Architecture Diagram: [Include diagram here]
-Key Components: Frontend (HTML, CSS, JavaScript), Backend (Node.js, Express), Database (MongoDB)
-3. Key Requirements
+Key Features : 
 
-User registration and authentication
-Task creation, editing, and deletion
-Task categorization and prioritization
-Responsive design
-4. Assumptions and Dependencies
+Add tasks to a to-do list
+Delete tasks from the to-do list
+Persistent state within a session
 
-Users have access to the internet
-The application will be hosted on a cloud server
-5. Constraints and Considerations
+Technology Stack : 
 
-Performance should be optimized for both desktop and mobile users
-Data security and privacy must be ensured
+Frontend: HTML, CSS, JavaScript
+Libraries: None
+Backend: None
+Database: None
+
+User Interface:
+
+The user interface consists of a main container with a task input field and a list of tasks. Each task can be checked off or deleted.
