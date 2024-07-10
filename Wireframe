@@ -1,0 +1,33 @@
+Wireframe Document  
+
+Wireframe Overview  :
+
+The wireframe outlines the visual structure of the To-Do List Application, showing the placement of key elements on the screen.
+
+Wireframe Design  :
+
+1.Main Container 
+  Title: "ToDo"
+  Task List: Display area for tasks
+  Input Section: Input box and Add button
+
+Main Container:
+
+Positioned in the center of the screen
+Contains the title, task list, and input section
+
+Wireframe Architecture : 
++---------------------------------------+
+|                ToDo                   |
+|---------------------------------------|
+|                                       |
+|  +---------------------------------+  |
+|  |   [ ] Task 1                    |  |
+|  |   [ ] Task 2                    |  |
+|  |   [ ] Task 3                    |  |
+|  +---------------------------------+  |
+|                                       |
+|  +------------------+ +-------------+ |
+|  | Add Your Task    | |     Add     | |
+|  +------------------+ +-------------+ |
++---------------------------------------+
