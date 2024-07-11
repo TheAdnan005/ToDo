@@ -1,0 +1,233 @@
+HTML  :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="toDo poppins-thin-normal">
+        <div class="Title poppins-bold-italic">ToDo</div>
+        <div class="ListElements">
+        </div>
+        <div class="input">
+            <input type="text" class="poppins-thin-normal" id="input-box" placeholder="Add Your Task">
+            <button class="Add-btn poppins-bold-normal">Add</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+CSS  :
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+body {
+  overflow: hidden;
+  background: #0f0e0d;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toDo {
+  border: #8c2e03 8px solid;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  background: beige;
+  color: #0f0e0d;
+  height: 70vh;
+  width: 27vw;
+  border-radius: 30px;
+  flex-direction: column;
+}
+
+.toDo .Title {
+  font-size: 25px;
+}
+
+.ListElements {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: start;
+  padding-left: 10px;
+  background: beige;
+  color: white;
+  width: 80%;
+  height: 60%;
+  border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 12px;
+  padding: 20px;
+}
+
+.input {
+  bottom: 10px;
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  height: 10%;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #551d03;
+  padding: 5px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.task-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  word-break: break-word;
+}
+
+.check-icon,
+.delete-icon {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.check-icon{
+  border-radius: 20px;
+}
+
+.check-icon.checked {
+  color: green;
+}
+.task.checked {
+  background: grey;
+}
+#input-box,
+::placeholder {
+  padding-left: 6px;
+  outline: none;
+  width: 70%;
+  font-size: 10px;
+  background: #876006;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}input[type="checkbox"].check-icon {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #caaaaa;
+  border-radius: 50%;
+  background: beige;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out, border 0.5s ease-in-out;
+  position: relative;
+}
+
+input[type="checkbox"].check-icon:checked {
+  background: #551d03; /* This will match the task background color */
+  border-color: #551d03;
+}
+
+input[type="checkbox"].check-icon:checked::before {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+.Add-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: #caaaaa;
+  width: 40%;
+  /* transition: transform 1s ease-in-out; */
+}
+.Add-btn:hover{
+  transform: scale(1.15);
+  transition: 0.4s ease-in-out;
+  background: #c97575;
+}
+.delete-icon:hover{
+  padding: 1px 3px;
+  border-radius: 0px;
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}
+.task:has(input:checked){
+  background:gray;
+  transition: 0.5s ease-in-out;
+ }
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-thin-normal {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.poppins-bold-normal {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+JAVASCRIPT  :
+
+let addBtn = document.querySelector(".Add-btn");
+let task = document.querySelector("#input-box");
+let listElement = document.querySelector(".ListElements");
+
+addBtn.addEventListener("click", () => {
+    if (task.value.trim() !== "") { // Check if the input is not empty
+        let div = document.createElement("div");
+        div.className = "task";
+        
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "check-icon";
+        
+        let taskText = document.createElement("div");
+        taskText.className = "task-text";
+        taskText.innerHTML = task.value;
+
+        let deleteIcon = document.createElement("span");
+        deleteIcon.className = "delete-icon";
+        deleteIcon.textContent = "🗑"; // Unicode for trash can
+
+        div.appendChild(checkbox);
+        div.appendChild(taskText);
+        div.appendChild(deleteIcon);
+        listElement.appendChild(div);
+        task.value = ""; // Clear the input box after adding the task
+
+        checkbox.addEventListener("click",()=>{
+            listElement.removeChild(div);
+            listElement.appendChild(div);
+        })
+
+        deleteIcon.addEventListener("click", () => {
+            listElement.removeChild(div);
+        });
+    }
+});
